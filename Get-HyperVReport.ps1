@@ -19,7 +19,7 @@
 
 		Version History:
 
-			[x] Version 1.5 - 05.March.2015
+			[x] Version 1.5.003 - 01.November.2025
 
 		Requirements:
 
@@ -2277,7 +2277,7 @@ ForEach ($VMHostItem in $VMHosts) {
                             $vmDiskData += "<p style=""margin-top:5px;text-align:left;text-indent:1nd3ntPlaceHolderpx""><abbr title=""$($vmDiskPath)"">$($vmDiskName)<span style=""font-size:10px;color:orange""> *</span></abbr> <br><span style=""display:inline-block;text-indent:1nd3ntPlaceHolderpx;font-size:10px;color:#BDBDBD"">&#10148; CurrentFileSize $($vmDiskFileSize[0])$($vmDiskFileSize[1]) (MaximumDiskSize $($vmDiskMaxSize[0])$($vmDiskMaxSize[1]))</span> <br><span style=""display:inline-block;text-indent:1nd3ntPlaceHolderpx;font-size:10px;color:#BDBDBD"">&#10148; $($vmDiskType) VHD | $($vmDiskControllerType) Controller | Fragmentation <span style=""color:$($vmDiskFragmentationTextColor);background-color:$($vmDiskFragmentationBgColor)"">$($vmDiskFragmentation)</span></span></p>"
                             $parentPath = $vmDiffDisk.ParentPath
                         }
-                        Until ($parentPath -eq $null)
+                        Until ($parentPath -eq $null -or $parentPath -eq "")
                     }
                     else
                     {
